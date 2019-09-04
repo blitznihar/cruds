@@ -15,6 +15,7 @@ public class EmployeeService implements IEmployeeService {
     @Override
     public void updateCalls(int employeeId) {
         Employee employee = employeeRepo.getEmployee(employeeId);
+        System.out.println(employee.getEmployeeId());
         if(employee==null)
         {
             employee = new Employee();
@@ -26,5 +27,9 @@ public class EmployeeService implements IEmployeeService {
         employee.setCall(employee.getCall()+1);
         employeeRepo.updateEmployee(employee);
     }
+
+	public void createEmployee(Employee employee) {
+        employeeRepo.createEmployee(employee);
+	}
 
 }
