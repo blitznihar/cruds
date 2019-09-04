@@ -16,14 +16,14 @@ public class EmployeeService implements IEmployeeService {
     public void updateCalls(int employeeId) {
         Employee employee = employeeRepo.getEmployee(employeeId);
         System.out.println(employee.getEmployeeId());
-        if(employee==null)
-        {
-            employee = new Employee();
-            employee.setEmployeeId(employeeId);
-            employee.setFirstName("Something");
-            employee.setLastName("Something");
-            employeeRepo.createEmployee(employee);
-        }
+        // if(employee==null)
+        // {
+        //     employee = new Employee();
+        //     employee.setEmployeeId(employeeId);
+        //     employee.setFirstName("Something");
+        //     employee.setLastName("Something");
+        //     employeeRepo.createEmployee(employee);
+        // }
         employee.setCall(employee.getCall()+1);
         employeeRepo.updateEmployee(employee);
     }

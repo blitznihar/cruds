@@ -1,9 +1,6 @@
 package com.blitznihar.db.cruds;
 
 import com.blitznihar.db.services.AppProperties;
-import com.blitznihar.db.services.EmployeeService;
-import com.blitznihar.db.services.IEmployeeService;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -20,11 +17,11 @@ public class DemoApplication {
 	private static Logger LOGGER = LoggerFactory.getLogger(DemoApplication.class);
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(DemoApplication.class, args);
-		IEmployeeService employeeService = (EmployeeService)ctx.getBean(EmployeeService.class);
+		//IEmployeeService employeeService = (EmployeeService)ctx.getBean(EmployeeService.class);
 		AppProperties appProperties = (AppProperties)ctx.getBean(AppProperties.class);
 		int empId = appProperties.returnEmployeeId();
 		LOGGER.info("Some Info {}",empId);
-		employeeService.updateCalls(empId);
+		//employeeService.updateCalls(empId);
 	}
 
 }
